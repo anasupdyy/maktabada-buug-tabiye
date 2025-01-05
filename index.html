@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUUG TABIYE</title>
+    <link rel="icon" href="Screenshot_2025-01-03_150801-removebg-preview.png" type="image/png">
+    <meta name="description" content="buug tabiye, nafteyda gacalo,wan ku salamay sxb, amina al-mufti ">
+    <meta name="keywords" content="amina al-mufti,boog somali,book english,book arabi">
+    <meta name="author" content="Anas Abdiwahid">
+    <meta name="robots" content="index, follow">
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+        .logo {
+            text-align: center;
+            margin: 10px 0;
+            background-color: lightblue;
+        }
+        .logo img {
+            width: 100px;
+            transition: 0.3;
+        }
+        .logo img:hover{
+            transform: scale(1.5);
+            transition: 0.4;
+        }
+        header {
+            text-align: center;
+            padding: 1px;
+            background: linear-gradient(to bottom, lightblue, rgb(255, 255, 255));
+            color: #030202;
+           
+        }
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .search input {
+            width: 200px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search button {
+            background-color: blue;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .search button:hover {
+            background-color: darkblue;
+        }
+        .nav {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 5px;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, lightblue, rgb(255, 255, 255));
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top:0;
+            right:0;
+            left:0;
+        }
+        .nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            margin: 15px;
+        }
+        .nav a:hover {
+            background-color: rgb(37, 18, 211);
+            color: white;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex; 
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        .main {
+            flex: 5;
+            background-color: lightblue;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            text-align: center;
+            margin:20px
+            
+        }
+        .main img {
+            width: 200px;
+            margin: 20px 0;
+            display: inline-flex;
+        }
+        .main p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .main h3 {
+            margin-bottom: 10px;
+            color: #444;
+        }
+        .sidebar {
+            background-color: lightblue;
+            padding: 20px;
+            flex: 1;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            color: #030202;
+        }
+        .sidebar a{
+            text-decoration: none;
+            transition: 0.4;
+            color: #d90000;
+            gap: 10px;
+            transition:all 0.3;
+            
+        }
+        .sidebar a:hover{
+            background-color: rgb(0, 203, 112);
+            color: #fffefe;
+            padding: 10px;
+            border-radius: 5px;
+            /* transform: scale(0.3); */
+        }
+        .sections {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px;
+        }
+        .section {
+            flex: 0 0 auto;
+            width: 200px;
+            background-color: white;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+        .section img {
+            width: 90%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .section img:hover{
+            transform: scale(1.1);
+        }
+        .section a {
+            display: block;
+            margin-top: 10px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .section:hover {
+            transform: scale(1.05);
+        }
+        .section a:hover{
+            color: #ffffff;
+            background-color: rgb(33, 198, 44);
+            transform: scale(0.9);
+        }
+        .section h6{
+            color: blue;
+            transition: 0.2s;
+        }
+        .section h6:hover{
+            transform: scale(1.4);
+        }
+        footer {
+            text-align: center;
+            background: linear-gradient(to bottom, lightblue, rgb(255, 255, 255));
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        footer img {
+            width: 80px;
+            margin-bottom: 10px;
+            transition: 0.4s;
+        }
+        footer img:hover{
+            transform: scale(1.2);
+        }
+        footer h3 {
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            .sections {
+                flex-direction: column;
+                align-items: center;
+            }
+            .section {
+                width: 90%;
+            }
+            .main img {
+                width: 100%;
+            }
+        }
+        .anas{
+            display: flex;
+            gap: 20px;
+            height: 417px;
+        }
+        .Fter{
+            text-align: center;   
+        }
+        .fter img{
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            background: red;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            align-items: end;
+            justify-content: right;
+
+            
+        }
+        li{
+            height: 50px;
+            
+        }
+        .sidebar a{
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 100%;
+            text-decoration: none;
+        }
+        a:hover{
+            background: #f0f0f0;
+
+        }
+
+        .sidebar{
+            background: radial-gradient(yellow,red);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+        }
+        .sidebar li{
+            width: 100%;
+        }
+        .sidebar a{
+            width: 100%;
+            color: rgb(1, 0, 0);
+        }
+        ul{
+            text-align: right;
+            margin-right: 20px;
+            list-style: none;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="logo">
+        <img src="Screenshot_2025-01-03_150801-removebg-preview.png" alt="">
+    </header>
+    <header>
+        <h3>BUUG TABIYE</h3>
+        <div class="search">
+            <input type="search" id="searchBox" placeholder="Search">
+            <button onclick="searchContent()">Search</button>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about us .html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <ul>
+            <li class="menu"><a onclick="openfuntion()" href="#">&#9776</a></li>
+        </ul>
+            <ul class="sidebar">
+                    <li><a onclick="clothefuntion()" href="#">&#9776</a></li>
+                    <li><a href="gabayo.html">Gabay</a></li>
+                    <li><a href="jaceyl.html">Jaceyl</a></li>
+                    <li><a href="Tariikh.html">Tariikh</a></li>
+                    <li><a href="dhira'galin.html">Dhira'Galin</a></li>
+                    <li><a href="Forex.html">Forex</a></li>
+                    <li><a href="English.html">English</a></li>
+                    <li><a href="arabi.html">Arabi</a></li>
+                    <li><a href="sheeko.html">Sheeko</a></li>
+                    <li><a href="qamuus.html">Qamuus</a></li>
+                </ul>
+        </nav>
+    </header>
+    <!-- <div class="anas">
+   
+        <div class="sidebar">
+            <a href="">BOOK: GABAY</a>
+            <br>
+            <br>
+            <a href="">BOOK: JACEEY</a>
+            <br>
+            <br>
+            <a href="">BOOK: XIKMAD</a>
+            <br>
+            <br>
+            <a href="">BOOK: TARIIKH</a>
+            <br>
+            <br>
+            <a href="">BOOK: DHIRA'GALIN</a>
+            <br>
+            <br>
+            <a href="">BOOK: FOREX</a>
+            <br>
+            <br>
+            <a href="">BOOK: ENGLISH</a>
+            <br>
+            <br>
+            <a href="">BOOK: CARABI</a>
+            <br>
+            <br>
+            <a href="">BOOK: SHEEKO</a>
+            <br>
+            <br>
+            <a href="">BOOK: QAMUUS</a>
+        </div>
+    </div> -->
+    <div class="container">
+        </div>
+        <div class="sections">
+            <div class="section">
+                <img src="wan ku salamay sxb.jpg" alt="">
+                <h6>Book: Wan Ku Salamay Sxb</h6>
+                <h6>Qoraa: Adan Qadar Ali</h6>
+                <h6>Pages: 348</h6>
+                <a href="wanku salaamay saaxib.pdf" target="_blank">Akhriso</a>
+            </div>
+            <div class="section">
+                <img src="maclimuu.jpg" alt="">
+                <h6>Book: Forex</h6>
+                <h6>Qoraa: Maclimuu</h6>
+                <h6>Pages: 96</h6>
+                <a href="Forex Somali Abdiwali A. Ali (Moalimuu).pdf" target="_blank">Akhriso</a>
+            </div>
+            <div class="section">
+                <img src="dhambalada quranka.jpg" alt="">
+                <h6>Book: Dhambalada Qur'aan-ka</h6>
+                <h6>Qoraa: Cabdulxakiim Muxammad </h6>
+                <h6>Pages: 54</h6>
+                <a href="Dhambaallada Quraanka (1).pdf" target="_blank">Akhriso</a>
+            </div>
+            <div class="section">
+                <img src="Amina al mufti.jpg" alt="">
+                <h6>Book: Amina Al-Mufti</h6>
+                <h6>Qoraa: Kamaal A. Ali</h6>
+                <h6>Pages: 327</h6>
+                <a href="@somalibooks Aamin Almufti.pdf" target="_blank">Akhriso</a>
+            </div>
+            <div class="section">
+                <img src="nafteyda gacalo.jpg" alt="">
+                <h6>Book: Nafteyda Gacalo</h6>
+                <h6>Qoraa: Mohamed Qamuus</h6>
+                <h6>Pages: 107</h6>
+                <a href="Naftaydaay Gacalo.pdf" target="_blank">Akhriso</a>
+            </div>
+            <div class="section">
+                <img src="cawaysyada ssamaleylka.jpg" alt="">
+                <h6>Book:   Cawayska Samalaylka</h6>
+                <h6>Qoraa:  Cali Ileeye
+                </h6>
+                <h6>Pages: 74</h6>
+                <a href="Cawaysyada Saamalaylka 2023 (1).pdf" target="_blank">Akhriso</a>
+            </div>
+            <div class="section">
+                <img src="photo_2025-01-05_00-07-12.jpg" alt="">
+                <h6>Book: Himiladaada Hano</h6>
+                <h6>Qoraa: Mohamed Ismail Mohamed</h6>
+                <h6>Pages: 138</h6>
+                <a href="@Sahankaxogahabooks -Himiladaada Hano (2).pdf" target="_blank">Akhriso</a>
+            </div>
+            <div class="section">
+                <img src="ku raxeeyso nolashada.jpg" alt="">
+                <h6>Book: Ku Raxeyso Nolashada</h6>
+                <h6>Qoraa: Abukar Mohamed</h6>
+                <h6>Pages: 134</h6>
+                <a href="KU RAAXAYSO NOLOSHADA-1.pdf" target="_blank">Akhriso</a>
+            </div>
+            <div class="section">
+                <img src="Untitled-4.jpg" alt="">
+                <h6>Book: 30 Dhacdo</h6>
+                <h6>Qoraa: Zakariye Haruni</h6>
+                <h6>Pages: 74</h6>
+                <a href="30 Dhacdo iyo 3 Cashar.pdf" target="_blank">Akhriso</a>
+            </div>
+           
+           
+           
+        </div>
+    </div>
+   
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="sections">
+        <div class="section">
+            <img src="jacelkii muliyo.jpg" alt="">
+            <h6>Book: Jaceylki muliyo</h6>
+            <h6>Qoraa: Hassan nuur</h6>
+            <h6>Pages: 11</h6>
+            <a href="JACAYLKII MULIYO IYO XUSEEN MEECAAD..pdf" target="_blank">Akhriso</a>
+        </div>
+        <div class="section">
+            <img src="the littel red.jpg" alt="">
+            <h6>Book: The littel red</h6>
+            <h6>Qoraa: alexis munier</h6>
+            <h6>Pages: 210</h6>
+            <a href="The_Little_Red_Book_of_Very_Dirty_Words.pdf" target="_blank">Akhriso</a>
+        </div>
+       
+       
+       
+    </div>
+</div>
+<div class="main">
+    <h3>Buug Tabiye</h3>
+    <p>Ku soo dhawoow maktabadda BUUG TABIYE! Waa goob gaar ah oo lagu kaydiyo buugaagta ugu xiisaha badan. Halkaan waxaad ka heli kartaa qoraallo qiimo leh oo aad wax badan ka faa’iidi doonto. Dookhaaga ku dhis aqoon!</p>
+    <img style="transform: scale(1.3);" src="20-animated-gifs-book-geeks-wi-unscreen.gif" alt="">
+    <img style="transform: scale(1.3);" src="Read-the-book--unscreen.gif" alt="">
+</div>
+    <footer>
+        <a href="https://api.whatsapp.com/send?phone=252613496943&text=Ku so Dhawaaw Maktabada Buug Tabiye Maxaan Ka Cawiyaa" target="_blank"><img src="Whatsapp_Icon_Whatsapp_Logo_PNG_Images___Whatsapp_Icon__Whatsapp__Whatsapp_Logo_PNG_Transparent_Background_-_Pngtree__1_-removebg-preview.png" alt=""></a>
+        <a href="https://www.facebook.com/share/1GF2r3jtpd/?mibextid=wwXIfr" target="_blank"><img src="Descargar_logotipo_de_facebook_png__icono_de_facebook_transparente_png-removebg-preview.png" alt=""></a>
+        <a href="https://www.instagram.com/anaz_updyy/profilecard/?igsh=OWt0dDlreGZ0c25s" target="_blank"><img src="Instagram_s_Original_Logo_Creator_Likes_The_New_Logo-removebg-preview.png" alt=""></a>
+        <a href="https://t.me/buug_tabiye" target="_blank"><img  src="Telegram_Logo_PNG_-_Free_Download__1_-removebg-preview.png" alt=""></a>
+    </footer>
+    <footer class="Fter">
+        <a href="about us .html"><img src="Screenshot_2025-01-03_150801-removebg-preview.png" alt="">
+        </a>
+        <h3>© SOMALI LIBRARY</h3>
+    </footer>
+    <script>
+        function searchContent() {
+            const query = document.getElementById('searchBox').value.toLowerCase();
+            const sections = document.querySelectorAll('.section');
+
+            let found = false;
+            sections.forEach(section => {
+                if (section.textContent.toLowerCase().includes(query)) {
+                    section.style.display = "block";
+                    found = true;
+                } else {
+                    section.style.display = "none";
+                }
+            });
+            if (!found) alert("Qoraalka aad raadineyso lagama helin!");
+        }
+    </script>
+     <script>
+        function openfuntion(){
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = "flex";
+        }
+        function clothefuntion(){
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = "none";
+        }
+    </script>
+</body>
+</html>
