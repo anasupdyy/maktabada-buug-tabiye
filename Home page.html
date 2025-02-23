@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Home Page | BuugTebiye</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to bottom, lightblue, rgb(255, 255, 255));
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(to bottom, lightblue, rgb(255, 255, 255));
+            padding: 10px;
+        }
+        
+        nav a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background-color: rgb(37, 18, 211);
+            border-radius: 5px;
+        }
+        .main {
+            background: url("Modern Office Library Bookcase _ Professional Virtual Zoom Background.jpeg") no-repeat center center/cover;
+            text-align: center;
+            padding: 50px;
+            color: white;
+            min-height: 400px;
+        }
+        .main h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(243, 237, 237, 0.5);
+        }
+        .main h3 {
+            font-size: 18px;
+            width: 80%;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .popular-books {
+            background: #f9f9f9;
+            padding: 50px 0;
+            text-align: center;
+            gap: 25px;
+        }
+        .popular-books h2 {
+            font-size: 30px;
+        }
+        .book-list {
+            justify-content: center;
+            gap: 90px;
+            margin-top: 20px;
+        }
+        .book-list img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .book-list img:hover {
+            transform: scale(1.1);
+        }
+
+        .coming-soon {
+            background: linear-gradient(to bottom, lightblue, rgb(255, 255, 255));
+            color: rgb(0, 0, 0);
+            padding: 20px 0;
+            text-align: center;
+        }
+        .coming-soon h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 80%;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+        .slideshow-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+        .slideshow-container img:hover {
+            transform: scale(1.05);
+        }
+        
+        .features {
+            background: #f9f9f9;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        .download-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0dc23d;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #142bdf;
+        }
+        
+        footer {
+            background: linear-gradient(to bottom, lightblue, rgb(255, 255, 255));
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 30px 0;
+        }
+        footer .social-media {
+            margin-bottom: 20px;
+        }
+        footer .social-media a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        footer .social-media a:hover {
+            color: #4CAF50;
+        }
+        footer p {
+            font-size: 16px;
+        }
+        .download{
+            background-color: #0dc23d;
+            color: #fdfdfd;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .download:hover{
+            background-color: #142bdf
+            
+            
+           
+        }
+        .logo{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+        .logo img{
+            width: 130px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BUUG TEBIYE 📚</h1>
+        <div class="logo">
+            <img src="Screenshot_2025-01-03_150801-removebg-preview.png">
+            <a href="
+            _BUUG_TABIYE_18611669(1).apk" target="_blank">
+            <button class="download">Download App</button>
+            </a>
+        </div>
+    </header>
+    <nav>
+        <a href="Home page.html">Home</a>
+        <a href="index.html">Books</a>
+        <a href="about us .html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="main">
+        <h1>Ku soo dhowow BuugTebiye! 📖🌟</h1>
+        <h3>
+            Halkee ka heli kartaa aqoon aan dhammaad lahayn? Haa, halkan waa meesha saxda ah! 🎯
+            <br><br>
+            BuugTebiye waa maktabaddaada online-ka ah ee kuu soo bandhigeysa buugaag qiimo leh oo kuu furan adiga, meel kasta oo aad joogto. 🌍💡 Waxaan kuu haynaa buugaag ku saabsan aqoon, horumar shakhsi, cilmi baaris, iyo madadaalo 🎓📘.
+            <br><br>
+            U diyaar garow inaad ku dhex mushaaxdo dunida erayada iyo fikradaha cusub 💭✨. Haddii aad tahay arday, cilmi-baadhe, ama qof jecel akhriska, halkan waxaad ka heli doontaa waxa aad u baahan tahay! 🔍❤️
+            <br><br>
+            <strong>Faa'iidooyinka aad ka heli doontaa BuugTebiye:</strong>  
+            📚 Buugaag tayo sare leh oo kala duwan  
+            🔔 Cusboonaysiin joogto ah  
+            🌐 Si fudud oo degdeg ah u hel buuggaaga  
+            💬 Fikradaha iyo talooyinka bulshada  
+            <br><br>
+            Ha moogaan fursaddan! Ku biir bulshada akhriska jecel maanta oo bilaaw safarkaaga aqooneed! 🚀📖
+        </h3>
+    </div>
+
+    <div class="popular-books">
+        <h2>BOOKS 📚</h2>
+        <div class="book-list">
+            <img src="sawir mucjisada aroorti.jpg" alt="Book 1">
+            <img src="nafteyda gacalo.jpg" alt="Book 2">
+            <img src="sawirka Ha weynanin aabe.jpg" alt="Book 3">
+        </div>
+    </div>
+
+    <div class="coming-soon">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="ku raxeeyso nolashada.jpg">
+            </div>
+            <div class="mySlides fade">
+                <img src="kalinta indheer garadaka.jpg" >
+            </div>
+            <div class="mySlides fade">
+                <img src="sawirka salaad ba i dhaaftay.jpg" >
+            </div>
+            <div class="mySlides fade">
+                <img src="book-image-4.jpg" >
+            </div>
+            <div class="mySlides fade">
+                <img src="book-image-5.jpg" >
+            </div>
+            <div class="mySlides fade">
+                <img src="book-image-6.jpg">
+            </div>
+            <div class="mySlides fade">
+                <img src="book-image-7.jpg" >
+            </div>
+            <div class="mySlides fade">
+                <img src="book-image-8.jpg" >
+            </div>
+            <div class="mySlides fade">
+                <img src="book-image-9.jpg" >
+            </div>
+            <div class="mySlides fade">
+                <img src="book-image-10.jpg" >
+            </div>
+        </div>
+    </div>
+
+    <div class="features">
+        <h2>Waxyaabaha Laga Heli Karo Maktabadda BuugTebiye 📚</h2>
+        <ul>
+            <li>📄 Buugaag PDF ah oo diyaar ah in la soo dejiyo</li>
+            <li>📚 Buugaagta ugu dambeeyay ee si joogto ah loo cusboonaysiiyo</li>
+            <li>💬 Talooyin iyo faallooyin bulshada</li>
+            <li>🎓 Aqoon dheeraad ah iyo ilaha waxbarasho</li>
+            <li>🛠️ Adeegyada taageerada macaamiisha ee khadka tooska ah</li>
+        </ul>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com/share/1GF2r3jtpd/?mibextid=wwXIfr" target="_blank">Facebook</a>
+            <a href="https://api.whatsapp.com/send?phone=252613496943&text=Ku so Dhawaaw Maktabada Buug Tabiye Maxaan Ka Cawiyaa" target="_blank">WhatsApp</a>
+            <a href="https://www.instagram.com/anaz_updyy/profilecard/?igsh=OWt0dDlreGZ0c25s" target="_blank">Instagram</a>
+        </div>
+        <p>&copy; 2025 BuugTebiye. Dhammaan xuquuqda waa la keydiyay.</p>
+    </footer>
+
+    <button class="download-button" onclick="window.location.href='';">
+        Soo Degso App-ka Buug Tabiye  📲
+    </button>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";    
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+        showSlides();
+    </script>
+
+</body>
+</html>
