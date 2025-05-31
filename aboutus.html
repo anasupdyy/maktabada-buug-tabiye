@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="Logo-Buug tabiye.png" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    <title>About Buugtabiye</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            font-size: 16px; /* Base font size */
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+        
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem; /* Larger on mobile */
+        }
+        
+        h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .mission, .features, .story {
+            background-color: white;
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .features li::before {
+            content: "📚";
+            margin-right: 8px;
+        }
+        
+        .why-us {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .card {
+            background-color: white;
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+    
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0.8rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.3rem 0.6rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+        
+        /* Improved mobile styles */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 0.8rem 0;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+                margin-top: 1.2rem;
+            }
+            
+            .mission, .features, .story, .card {
+                padding: 1rem;
+            }
+            
+            .why-us {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            
+            .features li {
+                font-size: 0.9rem;
+            }
+            
+            footer {
+                padding: 1rem 0;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .social-links a {
+                display: block;
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+      <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-book-open"></i>
+                BUUGTABIYE
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="buug tabiye.html"><i class="fas fa-book"></i> Books</a></li>
+                    <li><a href="audio.html"><i class="fas fa-headphones"></i> Audio-Books</a></li>
+                     <li><a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1>About Buugtabiye</h1>
+        
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>At Buugtabiye, we believe in the transformative power of books. Our mission is to make literature accessible to everyone, promote a culture of reading, and provide a seamless online shopping experience for book lovers across Somalia and beyond.</p>
+        </section>
+        
+        <section class="features">
+            <h2>What We Offer</h2>
+            <ul>
+                <li><strong>Wide Selection:</strong> From Somali literature to international bestsellers and educational materials.</li>
+                <li><strong>Affordable Prices:</strong> Quality books at competitive rates.</li>
+                <li><strong>Fast Delivery:</strong> Reliable shipping across Somalia.</li>
+                <li><strong>Community:</strong> Book discussions and literary events.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Why Choose Buugtabiye?</h2>
+            <div class="why-us">
+                <div class="card">
+                    <h3>Quality Assurance</h3>
+                    <p>We source books from trusted publishers and authors to ensure you receive only the best.</p>
+                </div>
+                <div class="card">
+                    <h3>Customer Focus</h3>
+                    <p>Your satisfaction is our top priority with dedicated support.</p>
+                </div>
+                <div class="card">
+                    <h3>Cultural Relevance</h3>
+                    <p>We prioritize Somali literature while offering global titles.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="story">
+            <h2>Our Story</h2>
+            <p>Founded in [Year] by a team of passionate readers, Buugtabiye began as a small initiative to address the lack of accessible books in Somalia. Today, we've grown into a trusted online platform connecting readers with the books they love.</p>
+        </section>
+    </div>
+    
+    <footer>
+       <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BUUG TABIYE</h3>
+                    <p>Ku soo dhawoow maktabadda BUUG TABIYE!</p>
+                    <p>Waa goob gaar ah oo lagu kaydiyo buugaagta ugu xusuusta badan.</p>
+                    <p>Halkaan waxaad ka heli kartaa qoraallo qiimo leh oo aad wax badan ka faa'iidi doonto.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Isku Xirka Degdegga</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="buug tabiye.html"><i class="fas fa-book"></i> Books</a></li>
+                        <li><a href="audio.html"><i class="fas fa-headphones"></i> Audio-Books</a></li>
+                        <li><a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="Terms of use.html"><i class="fas fa-file-contract"></i> Terms of Use</a></li>
+                        <li><a href="Privacy policy.html"><i class="fas fa-shield-alt"></i>Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Nala Soo Xiriir</h3>
+                    <p><i class="fas fa-envelope"></i> buugtabiye@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +252 613496943</p>
+                    <div class="social-links">
+                       <a href="https://www.facebook.com/share/1XjaJozraH/" target="_blank" ><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://t.me/buug_tabiye" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/+252613496943" target="_blank" ><i class="fab fa-whatsapp"></i></a>
+                        <a href="tiktok.com/@anazz_updyy" target="_blank" ><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BUUG-TABIYE. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    </footer>
+</body>
+</html>
