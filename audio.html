@@ -127,6 +127,54 @@
             padding: 40px 0;
         }
 
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            padding-right: 50px;
+            border: 2px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-box button:hover {
+            background: #2980b9;
+        }
+
         /* Audio Books Section */
         .audio-section {
             background-color: white;
@@ -172,6 +220,10 @@
             height: 100%;
         }
 
+        .audio-item.hidden {
+            display: none;
+        }
+
         .audio-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
@@ -179,7 +231,7 @@
 
         .audio-cover {
             width: 100%;
-            height: 200px;
+            height: 290px;
             margin-bottom: 20px;
             border-radius: var(--border-radius);
             background-size: cover;
@@ -355,6 +407,19 @@
 
         .audio-item.playing .audio-cover::after {
             background: linear-gradient(to bottom, rgba(52, 152, 219, 0.2), rgba(52, 152, 219, 0.4));
+        }
+
+        /* No Results Message */
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 40px;
+            color: #666;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
         }
 
         /* Footer */
@@ -566,17 +631,32 @@
                 <p>Listen to your favorite books here</p>
             </div>
             
+            <!-- Search Box -->
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="audio-search" placeholder="Search audiobooks..." autocomplete="off">
+                    <button type="button" id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
             <div class="audio-list">
+                <!-- No results message -->
+                <div class="no-results">
+                    <i class="fas fa-book-open" style="font-size: 3rem; color: #ccc; margin-bottom: 15px;"></i>
+                    <h3>No audiobooks found</h3>
+                    <p>Try a different search term</p>
+                </div>
+                
                 <!-- Audio Book 1 -->
-<!--                 <div class="audio-item">
-                    <div class="audio-cover" style="background-image: url('909da4f3-139a-43fb-bbb7-a1908fe23ba6.jpg');">
+                   <div class="audio-item" data-title="Farxada iib ma ahan" data-author="farxad">
+                    <div class="audio-cover" style="background-image: url('ChatGPT\ Image\ Jun\ 6\,\ 2025\,\ 12_55_09\ AM.png');">
                         <div class="loading-spinner"></div>
                     </div>
                     <div class="audio-info">
-                        <h3>Duliyihii Kuuba Ee Dagalkii Somalia & Eithopia 1977 Part1</h3>
-                        <p>Orlando Cardoso | 1 Hour</p>
+                        <h3>Farxadu Iib Ma'ahann</h3>
+                        <p>Abdi-Karim Abdulle Ulusow | 38 Minutes</p>
                     </div>
-                    <audio class="audio-source" src="Part 1 Buug Uu Qoray Duuliyihii Kuuba Orlando Cardoso Ee Lagu Qabtay Dagaalkii 1977 Ee Somalia.mp3" preload="metadata"></audio>
+                    <audio class="audio-source" src="videoplayback.mp3" preload="metadata"></audio>
                     <div class="player-controls">
                         <div class="progress-container">
                             <div class="progress-bar">
@@ -597,10 +677,11 @@
                             <input type="range" class="volume-slider" min="0" max="100" value="100" aria-label="Volume control">
                         </div>
                     </div>
-                </div> -->
+                </div>
+              
                 
                 <!-- Audio Book 2 -->
-                <div class="audio-item">
+                <div class="audio-item" data-title="Basasinti Sirta Somalia U gudbi Eithopia" data-author="Suldn Ali America">
                     <div class="audio-cover" style="background-image: url('500482df-dc70-409f-b40d-75f2c49eae75.jpg');">
                         <div class="loading-spinner"></div>
                     </div>
@@ -632,7 +713,7 @@
                 </div>
                 
                 <!-- Audio Book 3 -->
-                <div class="audio-item">
+                <div class="audio-item" data-title="Gobihii Geyrida Mogadishu 1991-2000" data-author="Yusuf Moha'ed Xeyd">
                     <div class="audio-cover" style="background-image: url('gobihii\ geyrida\ ee\ mogadishu.png');">
                         <div class="loading-spinner"></div>
                     </div>
@@ -664,12 +745,12 @@
                 </div>
 
                 <!-- Audio Book 4 -->
-                <div class="audio-item">
+                <div class="audio-item" data-title="Xasuqii Xeybta Jasiiro " data-author="AbdiQadir Shire">
                     <div class="audio-cover" style="background-image: url('sawir\ \ xasuqii\ \ \ xebta\ jasiiro.png');">
                         <div class="loading-spinner"></div>
                     </div>
                     <div class="audio-info">
-                        <h3>Xasuqii Xeybta Jasiiro Part1</h3>
+                        <h3>Xasuqii Xeybta Jasiiro </h3>
                         <p>AbdiQadir Shire | 19 minutes</p>
                     </div>
                     <audio class="audio-source" src="Xasuuqii Xeebta Jasiira 1989  Iyo Halki Nin Ee Ka Bad Baday Oo Laga Wareystay Buga Madxafka Cadaabta.mp3" preload="metadata"></audio>
@@ -696,7 +777,7 @@
                 </div>
 
                 <!-- Audio Book 5 -->
-                <div class="audio-item">
+                <div class="audio-item" data-title="Basasadii Yahuuda Ee Amina Al-mufti Part:1" data-author="Amina Al-Mufti">
                     <div class="audio-cover" style="background-image: url('sawir\ \ amina\ al\ mufti.jpg');">
                         <div class="loading-spinner"></div>
                     </div>
@@ -767,226 +848,105 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Keep track of the currently playing audio
-            let currentlyPlaying = null;
-            
-            // Get all audio players
-            const audioPlayers = document.querySelectorAll('.audio-item');
-            
-            audioPlayers.forEach(player => {
-                const audio = player.querySelector('.audio-source');
-                const playPauseBtn = player.querySelector('.play-pause i');
-                const progressBar = player.querySelector('.progress-bar');
-                const progress = player.querySelector('.progress');
-                const currentTimeDisplay = player.querySelector('.current-time');
-                const durationDisplay = player.querySelector('.duration');
-                const volumeSlider = player.querySelector('.volume-slider');
-                const coverImage = player.querySelector('.audio-cover');
-                const loadingSpinner = player.querySelector('.loading-spinner');
-                
-                let isPlaying = false;
-                let isDragging = false;
-                
-                // Format time (seconds to MM:SS)
-                function formatTime(seconds) {
-                    const mins = Math.floor(seconds / 60);
-                    const secs = Math.floor(seconds % 60);
-                    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-                }
-                
-                // Update time display
-                function updateTimeDisplay() {
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let currentlyPlayingAudio = null;
+
+        const audioItems = document.querySelectorAll('.audio-item');
+
+        audioItems.forEach(player => {
+            const audio = player.querySelector('.audio-source');
+            const playPauseBtn = player.querySelector('.play-pause');
+            const playIcon = playPauseBtn.querySelector('i');
+            const progressBar = player.querySelector('.progress-bar');
+            const progress = player.querySelector('.progress');
+            const currentTimeDisplay = player.querySelector('.current-time');
+            const durationDisplay = player.querySelector('.duration');
+            const volumeSlider = player.querySelector('.volume-slider');
+
+            // Format seconds to MM:SS
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+
+            // Update time and progress bar
+            function updateTime() {
+                if (audio.duration) {
                     currentTimeDisplay.textContent = formatTime(audio.currentTime);
-                    progress.style.width = (audio.currentTime / audio.duration) * 100 + '%';
-                }
-                
-                // Set audio duration when metadata is loaded
-                function setDuration() {
                     durationDisplay.textContent = formatTime(audio.duration);
+                    const progressPercent = (audio.currentTime / audio.duration) * 100;
+                    progress.style.width = progressPercent + '%';
                 }
-                
-                // Play/Pause functionality
-                function togglePlayPause() {
-                    // Pause the currently playing audio if it's not this one
-                    if (currentlyPlaying && currentlyPlaying !== audio) {
-                        const otherPlayer = currentlyPlaying.closest('.audio-item');
-                        otherPlayer.querySelector('.play-pause i').classList.remove('fa-pause');
-                        otherPlayer.querySelector('.play-pause i').classList.add('fa-play');
-                        otherPlayer.classList.remove('playing');
-                        currentlyPlaying.pause();
-                    }
-                    
-                    if (isPlaying) {
-                        audio.pause();
-                        playPauseBtn.classList.remove('fa-pause');
-                        playPauseBtn.classList.add('fa-play');
-                        player.classList.remove('playing');
-                        currentlyPlaying = null;
-                    } else {
-                        audio.play().then(() => {
-                            playPauseBtn.classList.remove('fa-play');
-                            playPauseBtn.classList.add('fa-pause');
-                            player.classList.add('playing');
-                            currentlyPlaying = audio;
-                        }).catch(error => {
-                            console.error("Audio playback failed:", error);
-                            // Show some feedback to user
-                            alert("Playback failed. Please try again.");
-                        });
-                    }
-                    isPlaying = !isPlaying;
-                }
-                
-                // Progress bar click functionality
-                function seekToPosition(e) {
-                    if (!isDragging) {
-                        const percent = e.offsetX / progressBar.offsetWidth;
-                        audio.currentTime = percent * audio.duration;
-                        updateTimeDisplay();
-                    }
-                }
-                
-                // Handle progress bar dragging
-                progressBar.addEventListener('mousedown', () => {
-                    isDragging = true;
-                });
-                
-                document.addEventListener('mousemove', (e) => {
-                    if (isDragging) {
-                        const rect = progressBar.getBoundingClientRect();
-                        const percent = Math.min(Math.max(0, e.clientX - rect.left), rect.width) / rect.width;
-                        progress.style.width = percent * 100 + '%';
-                        currentTimeDisplay.textContent = formatTime(percent * audio.duration);
-                    }
-                });
-                
-                document.addEventListener('mouseup', (e) => {
-                    if (isDragging) {
-                        isDragging = false;
-                        const rect = progressBar.getBoundingClientRect();
-                        const percent = Math.min(Math.max(0, e.clientX - rect.left), rect.width) / rect.width;
-                        audio.currentTime = percent * audio.duration;
-                    }
-                });
-                
-                // Touch support for progress bar
-                progressBar.addEventListener('touchstart', () => {
-                    isDragging = true;
-                });
-                
-                document.addEventListener('touchmove', (e) => {
-                    if (isDragging) {
-                        const rect = progressBar.getBoundingClientRect();
-                        const touch = e.touches[0];
-                        const percent = Math.min(Math.max(0, touch.clientX - rect.left), rect.width) / rect.width;
-                        progress.style.width = percent * 100 + '%';
-                        currentTimeDisplay.textContent = formatTime(percent * audio.duration);
-                    }
-                });
-                
-                document.addEventListener('touchend', (e) => {
-                    if (isDragging) {
-                        isDragging = false;
-                        const rect = progressBar.getBoundingClientRect();
-                        const touch = e.changedTouches[0];
-                        const percent = Math.min(Math.max(0, touch.clientX - rect.left), rect.width) / rect.width;
-                        audio.currentTime = percent * audio.duration;
-                    }
-                });
-                
-                // Volume control
-                volumeSlider.addEventListener('input', function() {
-                    audio.volume = this.value / 100;
-                    // Update volume icon based on level
-                    const volumeIcon = this.previousElementSibling;
-                    if (this.value == 0) {
-                        volumeIcon.classList.remove('fa-volume-up', 'fa-volume-down');
-                        volumeIcon.classList.add('fa-volume-mute');
-                    } else if (this.value < 50) {
-                        volumeIcon.classList.remove('fa-volume-up', 'fa-volume-mute');
-                        volumeIcon.classList.add('fa-volume-down');
-                    } else {
-                        volumeIcon.classList.remove('fa-volume-down', 'fa-volume-mute');
-                        volumeIcon.classList.add('fa-volume-up');
-                    }
-                });
-                
-                // Skip forward/backward buttons
-                player.querySelector('.skip-backward').addEventListener('click', function() {
-                    audio.currentTime = Math.max(0, audio.currentTime - 15); // Skip back 15 seconds
-                });
-                
-                player.querySelector('.skip-forward').addEventListener('click', function() {
-                    audio.currentTime = Math.min(audio.duration, audio.currentTime + 15); // Skip forward 15 seconds
-                });
-                
-                // Play/Pause button click
-                playPauseBtn.addEventListener('click', togglePlayPause);
-                
-                // Also allow clicking anywhere on the cover to play/pause
-                coverImage.addEventListener('click', function() {
-                    // Don't trigger if clicking on loading spinner
-                    if (event.target !== loadingSpinner) {
-                        togglePlayPause();
-                    }
-                });
-                
-                // Progress bar click
-                progressBar.addEventListener('click', seekToPosition);
-                
-                // Show loading state when audio is buffering
-                audio.addEventListener('waiting', function() {
-                    coverImage.classList.add('loading');
-                });
-                
-                audio.addEventListener('canplay', function() {
-                    coverImage.classList.remove('loading');
-                });
-                
-                // Update time while playing
-                audio.addEventListener('timeupdate', updateTimeDisplay);
-                
-                // When audio ends
-                audio.addEventListener('ended', function() {
-                    playPauseBtn.classList.remove('fa-pause');
-                    playPauseBtn.classList.add('fa-play');
-                    player.classList.remove('playing');
-                    isPlaying = false;
-                    currentlyPlaying = null;
-                    audio.currentTime = 0;
-                    updateTimeDisplay();
-                });
-                
-                // When metadata is loaded (duration available)
-                audio.addEventListener('loadedmetadata', setDuration);
-                
-                // Set initial volume
+            }
+
+            // Set volume
+            volumeSlider.addEventListener('input', function () {
                 audio.volume = volumeSlider.value / 100;
             });
-            
-            // Pause all audio when clicking outside players
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.audio-item') && currentlyPlaying) {
-                    const player = currentlyPlaying.closest('.audio-item');
-                    player.querySelector('.play-pause i').classList.remove('fa-pause');
-                    player.querySelector('.play-pause i').classList.add('fa-play');
-                    player.classList.remove('playing');
-                    currentlyPlaying.pause();
-                    currentlyPlaying = null;
+
+            // Play/Pause toggle
+            playPauseBtn.addEventListener('click', function () {
+                if (currentlyPlayingAudio && currentlyPlayingAudio !== audio) {
+                    currentlyPlayingAudio.pause();
+                    const otherIcon = currentlyPlayingAudio.closest('.audio-item').querySelector('.play-pause i');
+                    otherIcon.classList.remove('fa-pause');
+                    otherIcon.classList.add('fa-play');
+                }
+
+                if (audio.paused) {
+                    audio.play();
+                    playIcon.classList.remove('fa-play');
+                    playIcon.classList.add('fa-pause');
+                    currentlyPlayingAudio = audio;
+                } else {
+                    audio.pause();
+                    playIcon.classList.remove('fa-pause');
+                    playIcon.classList.add('fa-play');
                 }
             });
-            
-            // Handle space bar to play/pause current audio
-            document.addEventListener('keydown', function(e) {
-                if (e.code === 'Space' && currentlyPlaying) {
-                    e.preventDefault();
-                    const player = currentlyPlaying.closest('.audio-item');
-                    player.querySelector('.play-pause').click();
-                }
+
+            // Update progress every second
+            audio.addEventListener('timeupdate', updateTime);
+
+            // Reset when ended
+            audio.addEventListener('ended', function () {
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+                progress.style.width = '0%';
+                currentTimeDisplay.textContent = '0:00';
+            });
+
+            // Load metadata to show total duration
+            audio.addEventListener('loadedmetadata', function () {
+                durationDisplay.textContent = formatTime(audio.duration);
             });
         });
-    </script>
+
+        // Search feature
+        const searchInput = document.getElementById('audio-search');
+        const noResultsMsg = document.querySelector('.no-results');
+
+        document.getElementById('search-button').addEventListener('click', function () {
+            const query = searchInput.value.toLowerCase().trim();
+            let found = false;
+
+            audioItems.forEach(item => {
+                const title = item.dataset.title.toLowerCase();
+                const author = item.dataset.author.toLowerCase();
+
+                if (title.includes(query) || author.includes(query)) {
+                    item.style.display = 'block';
+                    found = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            noResultsMsg.style.display = found ? 'none' : 'block';
+        });
+    });
+</script>
 </body>
 </html>
