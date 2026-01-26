@@ -854,11 +854,12 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy;  2025 BUUG-TABIYE. All Rights Reserved.</p>
+                <p>&copy; <span id="year"></span> BUUG-TABIYE. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
    <script>
+       document.getElementById("year").textContent = new Date().getFullYear();
     document.addEventListener('DOMContentLoaded', function () {
         let currentlyPlayingAudio = null;
 
@@ -960,3 +961,4 @@
 </script>
 </body>
 </html> 
+
