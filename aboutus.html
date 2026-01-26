@@ -259,10 +259,14 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 BUUG-TABIYE. All Rights Reserved.</p>
+              <p>&copy; <span id="year"></span> BUUG-TABIYE. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
