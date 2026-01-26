@@ -1582,11 +1582,12 @@ Buug Tabiye — Dookhaaga ku dhis aqoon!
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy;  2026 BUUG-TABIYE. All Rights Reserved.</p>
+               <p>&copy; <span id="year"></span> BUUG-TABIYE. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
     const slides = document.querySelector('.slides');
 const images = document.querySelectorAll('.slides img');
 const prevBtn = document.querySelector('.prev');
